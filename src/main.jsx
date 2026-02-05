@@ -164,13 +164,6 @@ const Faculty = () => (
           <h3>Principal</h3>
           <p>Trinity School</p>
         </div>
-        <div className="faculty-card">
-          <div className="faculty-img-wrapper">
-             <img src="https://www.trinityschool.in/uploads/facility/1739688412Director.jpg" alt="Director" />
-          </div>
-          <h3>Director</h3>
-          <p>Trinity School</p>
-        </div>
       </div>
     </div>
   </section>
@@ -338,38 +331,32 @@ const Facilities = () => (
       </div>
       
       <div className="facilities-grid">
-        <div className="facility-item">
-          <div className="facility-image">
-            <img src="https://images.uniapply.com/uploads/college/image/500/2616/Trinity_School_853_Skating_8.jpg" alt="Skating Rink" />
-            <span className="facility-badge">Sports</span>
+        {[
+          { icon: '🚌', title: 'School Conveyance', text: 'GPS-enabled safe transport across Bahadurgarh and nearby areas.', badge: 'Transport', source: 'source-collage-1', slice: 'slice-conveyance' },
+          { icon: '🛡️', title: 'CCTV & Security', text: '24/7 high-definition surveillance ensuring a safe campus for every child.', badge: 'Safety', source: 'source-collage-1', slice: 'slice-cctv' },
+          { icon: '🤖', title: 'AI & Robotics', text: 'State-of-the-art lab for hands-on experience with modern technology and coding.', badge: 'Technology', source: 'source-collage-1', slice: 'slice-robotics' },
+          { icon: '🎨', title: 'Arts & Music', text: 'Nurturing creativity through dedicated periods for music, dance, and fine arts.', badge: 'Creative', source: 'source-collage-1', slice: 'slice-arts' },
+          { icon: '💻', title: 'ICT (Computer Lab)', text: 'Advanced computing facilities with high-speed internet and modern software.', badge: 'Academic', source: 'source-collage-1', slice: 'slice-ict' },
+          { icon: '🏥', title: 'Medical Facilities', text: 'Well-equipped infirmary with trained staff for immediate health care needs.', badge: 'Health', source: 'source-collage-2', slice: 'slice-medical' },
+          { icon: '🛝', title: 'Play Spaces & Grounds', text: 'Spacious and safe outdoor areas for physical activities and motor skill development.', badge: 'Sports', source: 'source-collage-2', slice: 'slice-playground' },
+          { icon: '🏀', title: 'Multipurpose Court', text: 'Professional grade court for skating, basketball, and various sports training.', badge: 'Athletics', source: 'source-collage-2', slice: 'slice-court' },
+          { icon: '📚', title: 'Library', text: 'A resource-rich library with a vast collection of books to foster a love for reading.', badge: 'Academic', source: 'source-collage-2', slice: 'slice-library' },
+          { icon: '🔬', title: 'Laboratories', text: 'Fully equipped modern labs for Science, Math, and experiential learning.', badge: 'Modern', source: 'source-collage-2', slice: 'slice-labs' },
+          { icon: '🏫', title: 'Spacious Class Rooms', text: 'Digital smart classrooms designed for comfort and interactive learning.', badge: 'Infrastructure', source: 'source-collage-2', slice: 'slice-classrooms' }
+        ].map((facility, idx) => (
+          <div key={idx} className="facility-item">
+            <div className={`facility-image ${facility.source} ${facility.slice}`}>
+              <span className="facility-badge">{facility.badge}</span>
+            </div>
+            <div className="facility-info">
+              <div className="facility-title-flex">
+                <span className="facility-icon-small">{facility.icon}</span>
+                <h3>{facility.title}</h3>
+              </div>
+              <p>{facility.text}</p>
+            </div>
           </div>
-          <div className="facility-info">
-            <h3>Skating Rink</h3>
-            <p>Professional grade skating rink for specialized training and recreation.</p>
-          </div>
-        </div>
-        
-        <div className="facility-item">
-          <div className="facility-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7LCqqkmiC0xVla9YausHBBWmUohOYB-Ukbw&s" alt="Smart Classrooms" />
-            <span className="facility-badge">Academic</span>
-          </div>
-          <div className="facility-info">
-            <h3>Digital Smart Classrooms</h3>
-            <p>Interactive learning environment equipped with modern digital tools.</p>
-          </div>
-        </div>
-
-        <div className="facility-item">
-          <div className="facility-image">
-            <img src="https://www.trinityschool.in/uploads/facility/1739790390lab.jpg" alt="Science Labs" />
-            <span className="facility-badge">Modern</span>
-          </div>
-          <div className="facility-info">
-            <h3>Advanced Science Labs</h3>
-            <p>Fully equipped laboratories for hands-on experimentation and discovery.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>

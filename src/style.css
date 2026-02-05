@@ -584,8 +584,8 @@ img {
 
 .facilities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
 .facility-item {
@@ -594,6 +594,9 @@ img {
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .facility-item:hover {
@@ -603,14 +606,32 @@ img {
 
 .facility-image {
   position: relative;
-  height: 200px;
+  height: 180px;
+  background-repeat: no-repeat;
 }
 
-.facility-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Collage 1 (4x2): Conveyance, CCTV, Robotics, Arts, ICT */
+.source-collage-1 {
+  background-image: url('/facilities-collage.png');
+  background-size: 400% 200%;
 }
+.slice-conveyance { background-position: 0% 0%; }
+.slice-cctv { background-position: 33.33% 0%; }
+.slice-robotics { background-position: 66.66% 0%; }
+.slice-arts { background-position: 100% 0%; }
+.slice-ict { background-position: 0% 100%; }
+
+/* Collage 2 (3x2): Medical, Playground, Court, Library, Labs, Classrooms */
+.source-collage-2 {
+  background-image: url('/facilities-collage-2.jpg');
+  background-size: 300% 200%;
+}
+.slice-medical { background-position: 0% 0%; }
+.slice-playground { background-position: 50% 0%; }
+.slice-court { background-position: 100% 0%; }
+.slice-library { background-position: 0% 100%; }
+.slice-labs { background-position: 50% 100%; }
+.slice-classrooms { background-position: 100% 100%; }
 
 .facility-badge {
   position: absolute;
@@ -628,17 +649,30 @@ img {
 
 .facility-info {
   padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.facility-title-flex {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.facility-icon-small {
+  font-size: 1.5rem;
 }
 
 .facility-info h3 {
   color: var(--primary);
-  margin-bottom: 0.8rem;
-  font-size: 1.25rem;
+  margin-bottom: 0;
+  font-size: 1.15rem;
 }
 
 .facility-info p {
   color: #666;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* Location Section */
@@ -831,8 +865,9 @@ img {
 
 /* Faculty */
 .faculty-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2.5rem;
 }
 
