@@ -26,7 +26,6 @@ const Navbar = () => {
         
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`} id="navLinks">
           <a href="#" className="nav-link active">Home</a>
-          <a href="#about" className="nav-link">About</a>
           <a href="#faculty" className="nav-link">Leadership</a>
           <a href="#events" className="nav-link">Events</a>
           <a href="#facilities" className="nav-link">Facilities</a>
@@ -84,68 +83,43 @@ const Counter = ({ end, duration = 2000, suffix = "" }) => {
   return <span ref={countRef}>{count}{suffix}</span>
 }
 
+
 const Hero = () => (
-  <section className="hero hero-default-bg">
-    <div className="hero-overlay"></div>
-    <div className="container hero-content fade-in">
-      <div className="hero-badge">Sector 14, Omaxe City</div>
-      <h1 className="hero-title">Premier Education in Bahadurgarh</h1>
-      <p className="hero-motto">"Toil & Perseverance"</p>
-      <div className="hero-stats">
-        <div className="stat-item">
-          <span className="stat-number">
-            <Counter end={20} suffix="+" />
-          </span>
-          <span className="stat-label">Years of Excellence</span>
+  <section className="hero-modern">
+    <div className="hero-bg-image-container">
+      <img src="https://www.trinityschool.in/uploads/slider/banner_692acedc42c38.jpg" alt="Trinity School Campus" className="hero-bg-image" />
+    </div>
+    <div className="hero-overlay-dark"></div>
+    <div className="container hero-container fade-in">
+      <div className="hero-breadcrumb">Home / The School / <span className="active-crumb">Overview</span></div>
+      <div className="hero-content-modern">
+        <div className="hero-badge">Sector 14, Omaxe City</div>
+        <h1 className="hero-title">Premier Education in Bahadurgarh</h1>
+        <p className="hero-motto">"Toil & Perseverance"</p>
+        <div className="hero-stats">
+          <div className="stat-item">
+            <span className="stat-number"><Counter end={20} suffix="+" /></span>
+            <span className="stat-label">Years of Excellence</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">CBSE</span>
+            <span className="stat-label">Affiliated School</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number"><Counter end={100} suffix="%" /></span>
+            <span className="stat-label">Result Track</span>
+          </div>
         </div>
-        <div className="stat-item">
-          <span className="stat-number">CBSE</span>
-          <span className="stat-label">Affiliated School</span>
+        <div className="hero-actions">
+          <a href="https://www.trinityschool.in/uploads/banner/1729066415trinity-banner.jpg" target="_blank" className="btn btn-secondary">Trinity School App</a>
+          <a href="https://www.uniapply.com/school/trinity-school-sector-14-bahadurgarh-jhajjar/" target="_blank" className="btn btn-outline">Apply via UniApply</a>
         </div>
-        <div className="stat-item">
-          <span className="stat-number">
-            <Counter end={100} suffix="%" />
-          </span>
-          <span className="stat-label">Result Track</span>
-        </div>
-      </div>
-      <div className="hero-actions">
-        <a href="https://www.trinityschool.in/uploads/banner/1729066415trinity-banner.jpg" target="_blank" className="btn btn-secondary">Trinity School App</a>
-        <a href="https://www.uniapply.com/school/trinity-school-sector-14-bahadurgarh-jhajjar/" target="_blank" className="btn btn-outline">Apply via UniApply</a>
       </div>
     </div>
   </section>
 )
 
-const About = () => (
-  <section className="section-padding about reveal" id="about">
-    <div className="container">
-      <div className="about-grid">
-        <div className="about-text">
-          <div className="section-header">
-            <h2 className="section-title">Our Identity & Philosophy</h2>
-            <div className="title-underline" style={{ margin: 0 }}></div>
-          </div>
-          <p className="about-lead">Founded on the values of <strong>Education, Trust, and Discipline</strong>, Trinity School is more than just an academic institution—it's a community dedicated to holistic growth.</p>
-          
-          <div className="mv-container">
-            <div className="mv-item">
-              <h4>Our Mission</h4>
-              <p>To nurture the holistic growth of each child, preparing them for the dynamic challenges of the 21st century by providing a responsive environment grounded in ethics and values.</p>
-            </div>
-            <div className="mv-item">
-              <h4>Our Vision</h4>
-              <p>Shaping students into "wonderful human beings" who will change society for the better, reaching their full potential as thinkers, athletes, and artists.</p>
-            </div>
-          </div>
-        </div>
-        <div className="about-image">
-          <img src="https://www.trinityschool.in/uploads/slider/banner_692acedc42c38.jpg" alt="Trinity School Faculty" className="premium-img" />
-        </div>
-      </div>
-    </div>
-  </section>
-)
+
 
 const Faculty = () => (
   <section className="section-padding faculty reveal" id="faculty">
@@ -230,6 +204,8 @@ const FAQ = () => {
     </section>
   )
 }
+
+
 
 const Gallery = () => {
   const images = [
@@ -457,9 +433,9 @@ const App = () => {
       <Navbar />
       <main>
         <Hero />
-        <About />
         <Highlights />
         <Facilities />
+
         <Gallery />
         <Faculty />
         <section className="cta-banner reveal">
